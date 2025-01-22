@@ -101,7 +101,9 @@ public class TenantsController : Controller
             }
             return RedirectToAction(nameof(Index));
         }
-        return View(tenant);
+
+        // return View(tenantViewModel);
+        return View(new TenantViewModel(tenant, ReferenceData.TenantCategories, ReferenceData.ProductServicePlans));
     }
 
     // GET: Admin/Tenants/Delete/5
